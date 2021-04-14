@@ -89,7 +89,7 @@ gdscript/warnings/exclude_addons=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/node_referencer/plugin.cfg", "res://addons/package_manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/package_manager/plugin.cfg" )
 
 [rendering]
 
