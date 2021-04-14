@@ -111,8 +111,7 @@ __meta__ = {
 
 [node name="UninstallButton" type="Button" parent="HBoxContainer/Details/HBoxContainer/HBoxContainer"]
 visible = false
-margin_left = 56.0
-margin_right = 125.0
+margin_right = 114.0
 margin_bottom = 20.0
 hint_tooltip = "Uninstall the selected addons."
 text = "Uninstall Addon"
