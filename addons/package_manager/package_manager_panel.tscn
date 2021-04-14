@@ -1,0 +1,140 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/package_manager/package_manager_panel.gd" type="Script" id=1]
+
+[node name="PackageManagerPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddonList" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 361.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.55
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchEdit" type="LineEdit" parent="HBoxContainer/AddonList"]
+margin_right = 361.0
+margin_bottom = 24.0
+placeholder_text = "Search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PackageList" type="Tree" parent="HBoxContainer/AddonList"]
+margin_top = 28.0
+margin_right = 361.0
+margin_bottom = 572.0
+size_flags_vertical = 3
+hide_root = true
+select_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddContainer" type="HBoxContainer" parent="HBoxContainer/AddonList"]
+margin_top = 576.0
+margin_right = 361.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkEdit" type="LineEdit" parent="HBoxContainer/AddonList/AddContainer"]
+margin_right = 260.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+placeholder_text = "https://github.com/User/repository"
+
+[node name="AddButton" type="Button" parent="HBoxContainer/AddonList/AddContainer"]
+margin_left = 264.0
+margin_right = 361.0
+margin_bottom = 24.0
+hint_tooltip = "Fetch a addons using a list of Github urls separated by spaces and add them to the global addon list."
+text = "Add Addon(s)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Details" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 365.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PackageDiscription" type="RichTextLabel" parent="HBoxContainer/Details"]
+margin_right = 659.0
+margin_bottom = 576.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "# Godot-Gravity-Objects
+A Godot 3 plugin that adds nodes that act like planets (they have gravity)
+"
+selection_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Details"]
+margin_top = 580.0
+margin_right = 659.0
+margin_bottom = 600.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Details/HBoxContainer"]
+margin_right = 576.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InstallButton" type="Button" parent="HBoxContainer/Details/HBoxContainer/HBoxContainer"]
+margin_right = 97.0
+margin_bottom = 20.0
+hint_tooltip = "Install the selected addons."
+text = "Install Addon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UninstallButton" type="Button" parent="HBoxContainer/Details/HBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 56.0
+margin_right = 125.0
+margin_bottom = 20.0
+hint_tooltip = "Uninstall the selected addons."
+text = "Uninstall Addon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpdateButton" type="Button" parent="HBoxContainer/Details/HBoxContainer"]
+margin_left = 580.0
+margin_right = 659.0
+margin_bottom = 20.0
+hint_tooltip = "Update all installed addons."
+text = "Update All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="text_changed" from="HBoxContainer/AddonList/SearchEdit" to="." method="_on_SearchEdit_text_changed"]
+[connection signal="multi_selected" from="HBoxContainer/AddonList/PackageList" to="." method="_on_PackageList_multi_selected"]
+[connection signal="pressed" from="HBoxContainer/AddonList/AddContainer/AddButton" to="." method="_on_AddButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Details/HBoxContainer/HBoxContainer/InstallButton" to="." method="_on_InstallButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Details/HBoxContainer/HBoxContainer/UninstallButton" to="." method="_on_UninstallButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Details/HBoxContainer/UpdateButton" to="." method="_on_UpdateButton_pressed"]

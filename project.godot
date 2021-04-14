@@ -1,0 +1,96 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "GlobalInteractionState",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/global_state.gd"
+}, {
+"base": "Resource",
+"class": "InteractionActionData",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/action_data.gd"
+}, {
+"base": "Resource",
+"class": "InteractionCharacter",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/character.gd"
+}, {
+"base": "Resource",
+"class": "InteractionCondition",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/condition.gd"
+}, {
+"base": "Resource",
+"class": "InteractionItem",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/item.gd"
+}, {
+"base": "Panel",
+"class": "InteractionMenu",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/interaction_menu.gd"
+}, {
+"base": "Resource",
+"class": "InteractionNode",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/nodes/interaction_node.gd"
+}, {
+"base": "Resource",
+"class": "InteractionOption",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/option.gd"
+}, {
+"base": "Resource",
+"class": "InteractionTree",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/resources/interaction_tree.gd"
+}, {
+"base": "Node",
+"class": "InteractionTrigger",
+"language": "GDScript",
+"path": "res://addons/third_party/interaction_system/interaction_trigger.gd"
+}, {
+"base": "Camera",
+"class": "OrbitCamera",
+"language": "GDScript",
+"path": "res://addons/third_party/orbit_camera/orbit_camera.gd"
+} ]
+_global_script_class_icons={
+"GlobalInteractionState": "",
+"InteractionActionData": "",
+"InteractionCharacter": "",
+"InteractionCondition": "",
+"InteractionItem": "",
+"InteractionMenu": "",
+"InteractionNode": "",
+"InteractionOption": "",
+"InteractionTree": "",
+"InteractionTrigger": "res://addons/third_party/interaction_system/interaction_trigger_icon.svg",
+"OrbitCamera": ""
+}
+
+[application]
+
+config/name="Package Manager Plugin Demo"
+config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/exclude_addons=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/node_referencer/plugin.cfg", "res://addons/package_manager/plugin.cfg" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
