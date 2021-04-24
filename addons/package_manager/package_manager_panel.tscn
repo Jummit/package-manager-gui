@@ -84,9 +84,6 @@ margin_bottom = 576.0
 focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "# Godot-Gravity-Objects
-A Godot 3 plugin that adds nodes that act like planets (they have gravity)
-"
 selection_enabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Details"]

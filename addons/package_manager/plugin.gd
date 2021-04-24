@@ -1,7 +1,7 @@
 tool
 extends EditorPlugin
 
-var package_manager_panel := preload("res://addons/package_manager/package_manager_panel.tscn").instance()
+var package_manager_panel := preload("package_manager_panel.tscn").instance()
 
 func _enter_tree() -> void:
 	get_editor_interface().get_editor_viewport().add_child(package_manager_panel)
